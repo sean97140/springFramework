@@ -38,6 +38,36 @@ public class HelloControllerIT {
 	@Test
 	public void getHello() throws Exception {
 		ResponseEntity<String> response = template.getForEntity(base.toString(), String.class);
-		assertThat(response.getBody(), equalTo("Greetings from Spring Boot!"));
+		assertThat(response.getBody(), equalTo("Hello World w/Spring Boot"));
+	}
+	@Test
+	public void getQuery1() throws Exception {
+		ResponseEntity<String> response = template.getForEntity(base.toString()  + "query1/", String.class);
+		assertThat(response.getBody(), equalTo("Query 1 result"));
+	}
+	@Test
+	public void getQuery2() throws Exception {
+		ResponseEntity<String> response = template.getForEntity(base.toString() + "query2/", String.class);
+		assertThat(response.getBody(), equalTo("Query 2 result"));
+	}
+	@Test
+	public void getQuery3() throws Exception {
+		ResponseEntity<String> response = template.getForEntity(base.toString() + "query3/", String.class);
+		assertThat(response.getBody(), equalTo("Query 3 result"));
+	}
+	@Test
+	public void getQuery4() throws Exception {
+		ResponseEntity<String> response = template.getForEntity(base.toString() + "query4/", String.class);
+		assertThat(response.getBody(), equalTo("Query 4 result"));
+	}
+	@Test
+	public void getQuery5() throws Exception {
+		ResponseEntity<String> response = template.getForEntity(base.toString() + "query5/", String.class);
+		assertThat(response.getBody(), equalTo("Query 5 result"));
+	}
+	@Test
+	public void getQuery6() throws Exception {
+		ResponseEntity<String> response = template.getForEntity(base.toString()  + "query6/", String.class);
+		assertThat(response.getBody(), equalTo("Query 6 result"));
 	}
 }
